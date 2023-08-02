@@ -145,7 +145,6 @@ jobs:
           CONTEXT_ENV: ${{ toJson(env) }}
           CONTEXT_VARS: ${{ toJson(vars) }}
           CONTEXT_JOB: ${{ toJson(job) }}
-          CONTEXT_JOBS: ${{ toJson(jobs) }}
           CONTEXT_STEPS: ${{ toJson(steps) }}
           CONTEXT_RUNNER: ${{ toJson(runner) }}
           CONTEXT_SECRETS: ${{ toJson(secrets) }}
@@ -159,11 +158,12 @@ jobs:
 
           env > "command_env.txt"
           echo "${CONTEXT_GITHUB}" > "context_github.json"
-          echo "${CONTEXT_ENV}" > "context_vars.json"
-          echo "${CONTEXT_JOB}" > "context_job.json"
+          echo "${CONTEXT_ENV}" > "context_env.json"
           echo "${CONTEXT_VARS}" > "context_vars.json"
+          echo "${CONTEXT_JOB}" > "context_job.json"
           echo "${CONTEXT_STEPS}" > "context_steps.json"
           echo "${CONTEXT_RUNNER}" > "context_runner.json"
+          echo "${CONTEXT_SECRETS}" > "context_secrets.json"
           echo "${CONTEXT_STRATEGY}" > "context_strategy.json"
           echo "${CONTEXT_MATRIX}" > "context_matrix.json"
           echo "${CONTEXT_NEEDS}" > "context_needs.json"
