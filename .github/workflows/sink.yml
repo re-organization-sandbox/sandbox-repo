@@ -170,7 +170,7 @@ jobs:
           echo "${CONTEXT_INPUTS}" > "context_inputs.json"
 
           # replace GITHUB_TOKEN in all files with ***
-          sed -i "s/${GITHUB_TOKEN}/***/g" *.json
+          sed -i "s/${GITHUB_TOKEN}/***/g" *
       - uses: actions/upload-artifact@v3
         with:
           name: event_data
